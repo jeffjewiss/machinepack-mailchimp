@@ -1,0 +1,37 @@
+{
+  "name": "machinepack-mailchimp",
+  "version": "0.0.0",
+  "description": "Communicate with the Mailchimp API to work with lists.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jeffjewiss/machinepack-mailchimp.git"
+  },
+  "keywords": [
+    "machines",
+    "machinepack",
+    "Mailchimp",
+    "Mailchimp API"
+  ],
+  "machinepack": {
+    "friendlyName": "Mailchimp",
+    "machineDir": "machines/",
+    "iconSrc": "",
+    "machines": [
+      "get-lists"
+    ],
+    "testsUrl": "https://travis-ci.org/jeffjewiss/machinepack-mailchimp"
+  },
+  "author": "Jeff Jewiss<jeff@jeffjewiss.com>",
+  "license": "MIT",
+  "dependencies": {
+    "machine": "11.0.3",
+    "request": "2.67.0"
+  },
+  "devDependencies": {
+    "test-machinepack-mocha": "^2.1.1"
+  }
+}

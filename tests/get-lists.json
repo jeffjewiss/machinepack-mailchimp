@@ -1,0 +1,17 @@
+{
+  "machine": "get-lists",
+  "expectations": [
+    {
+      "using": {},
+      "outcome": "error"
+    },
+    {
+      "using": {
+        "apiKey": "test1234",
+        "dataCenter": "us6"
+      },
+      "outcome": "error",
+      "returns": 401
+    }
+  ]
+}
