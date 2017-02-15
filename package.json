@@ -29,8 +29,8 @@
   "author": "Jeff Jewiss<jeff@jeffjewiss.com>",
   "license": "MIT",
   "dependencies": {
-    "machine": "11.0.3",
-    "request": "2.67.0"
+    "machine": "^12.4.0",
+    "request": "^2.79.0"
   },
   "devDependencies": {
     "test-machinepack-mocha": "^2.1.1"
