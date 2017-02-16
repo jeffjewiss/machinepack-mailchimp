@@ -22,7 +22,8 @@
     "iconSrc": "",
     "machines": [
       "get-lists",
-      "get-members"
+      "get-members",
+      "add-member"
     ],
     "testsUrl": "https://travis-ci.org/jeffjewiss/machinepack-mailchimp"
   },
