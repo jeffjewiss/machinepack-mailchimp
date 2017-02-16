@@ -99,7 +99,14 @@ module.exports = {
 
   exits: {
     error: {
-      description: 'Unexpected error occurred.'
+      description: 'Unexpected error occurred.',
+      example: { 
+        type: 'http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/',
+        title: 'Resource Not Found',
+        status: 404,
+        detail: 'The requested resource could not be found.',
+        instance: '' 
+      }      
     },
     success: {
       description: 'Returns the information about members.',
@@ -214,6 +221,7 @@ module.exports = {
         user: 'username',
         password: inputs.apiKey
       },
+      json: true,
       qs: {
         fields: inputs.fields,
         exclude_fields: inputs.excludeFields,
@@ -236,17 +244,11 @@ module.exports = {
         return exits.error(err)
       }
       if (response.statusCode > 299 || response.statusCode < 200) {
-        return exits.error(response.statusCode)
+        var error = body.status ? body : {status: response.statusCode}
+        return exits.error(error)
       }
 
-      var parsedBody = JSON.parse(body)
-
-      return exits.success({
-        members: parsedBody.members,
-        list_id: parsedBody.list_id,
-        total_items: parsedBody.total_items,
-        _links: parsedBody._links
-      })
+      return exits.success(body)
     })
   }
 
