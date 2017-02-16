@@ -1,0 +1,8 @@
+{
+  "machine": "add-member",
+  "expectations": [{
+    "todo": true,
+    "using": {},
+    "outcome": "success"
+  }]
+}
