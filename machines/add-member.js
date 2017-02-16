@@ -82,7 +82,14 @@ module.exports = {
 
   exits: {
     error: {
-      description: 'Unexpected error occurred.'
+      description: 'Returns the error response.',
+      example: { 
+        type: 'http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/',
+        title: 'Member Exists',
+        status: 400,
+        detail: 'test@email.com is already a list member. Use PUT to insert or update list members.',
+        instance: ''
+      }
     },
     success: {
       description: 'Returns the information about the new member.',

@@ -99,7 +99,7 @@ module.exports = {
 
   exits: {
     error: {
-      description: 'Unexpected error occurred.',
+      description: 'Returns the error response.',
       example: { 
         type: 'http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/',
         title: 'Resource Not Found',
