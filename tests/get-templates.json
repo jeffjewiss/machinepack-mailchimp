@@ -1,0 +1,8 @@
+{
+  "machine": "get-templates",
+  "expectations": [{
+    "todo": true,
+    "using": {},
+    "outcome": "success"
+  }]
+}
