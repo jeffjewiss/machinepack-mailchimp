@@ -22,12 +22,12 @@ module.exports = {
       required: true
     },
     fields: {
-      example: '["one", "two"]',
+      example: 'id, name, type',
       description: 'A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.',
       required: false
     },
     excludeFields: {
-      example: '["one", "two"]',
+      example: 'id, _links',
       description: 'A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.',
       required: false
     }
@@ -36,47 +36,47 @@ module.exports = {
   exits: {
     error: {
       description: 'Returns the error response.',
-      example: { 
+      example: {
         type: 'http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/',
         title: 'Resource Not Found',
         status: 404,
         detail: 'The requested resource could not be found.',
-        instance: '' 
-      }      
+        instance: ''
+      }
     },
     success: {
       description: 'Returns the information about a specific template.',
       example: {
-        "id": 2000094,
-        "type": "gallery",
-        "name": "Event by Veerle Pieters",
-        "drag_and_drop": true,
-        "responsive": true,
-        "category": "Events",
-        "date_created": "2015-09-16 13:16:04",
-        "created_by": "",
-        "active": true,
-        "folder_id": 0,
-        "thumbnail": "http://gallery.mailchimp.com/27aac8a65e64c994c4416d6b8/images/event_veerle_pieters_nb.png",
-        "share_url": "",
-        "_links": [
+        'id': 2000094,
+        'type': 'gallery',
+        'name': 'Event by Veerle Pieters',
+        'drag_and_drop': true,
+        'responsive': true,
+        'category': 'Events',
+        'date_created': '2015-09-16 13:16:04',
+        'created_by': '',
+        'active': true,
+        'folder_id': 0,
+        'thumbnail': 'http://gallery.mailchimp.com/27aac8a65e64c994c4416d6b8/images/event_veerle_pieters_nb.png',
+        'share_url': '',
+        '_links': [
           {
-            "rel": "self",
-            "href": "https://usX.api.mailchimp.com/3.0/templates/2000094",
-            "method": "GET",
-            "targetSchema": "https://api.mailchimp.com/schema/3.0/Templates/Instance.json"
+            'rel': 'self',
+            'href': 'https://usX.api.mailchimp.com/3.0/templates/2000094',
+            'method': 'GET',
+            'targetSchema': 'https://api.mailchimp.com/schema/3.0/Templates/Instance.json'
           },
           {
-            "rel": "parent",
-            "href": "https://usX.api.mailchimp.com/3.0/templates",
-            "method": "GET",
-            "targetSchema": "https://api.mailchimp.com/schema/3.0/Templates/Collection.json",
-            "schema": "https://api.mailchimp.com/schema/3.0/CollectionLinks/Templates.json"
+            'rel': 'parent',
+            'href': 'https://usX.api.mailchimp.com/3.0/templates',
+            'method': 'GET',
+            'targetSchema': 'https://api.mailchimp.com/schema/3.0/Templates/Collection.json',
+            'schema': 'https://api.mailchimp.com/schema/3.0/CollectionLinks/Templates.json'
           },
           {
-            "rel": "delete",
-            "href": "https://usX.api.mailchimp.com/3.0/templates/2000094",
-            "method": "DELETE"
+            'rel': 'delete',
+            'href': 'https://usX.api.mailchimp.com/3.0/templates/2000094',
+            'method': 'DELETE'
           }
         ]
       }
