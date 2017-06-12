@@ -19,12 +19,12 @@ module.exports = {
       required: true
     },
     fields: {
-      example: '["one", "two"]',
+      example: 'id, name, contact.company',
       description: 'A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.',
       required: false
     },
     excludeFields: {
-      example: '["one", "two"]',
+      example: 'id, name, contact.company',
       description: 'A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.',
       required: false
     },
@@ -100,13 +100,13 @@ module.exports = {
   exits: {
     error: {
       description: 'Returns the error response.',
-      example: { 
+      example: {
         type: 'http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/',
         title: 'Resource Not Found',
         status: 404,
         detail: 'The requested resource could not be found.',
-        instance: '' 
-      }      
+        instance: ''
+      }
     },
     success: {
       description: 'Returns the information about members.',
@@ -118,9 +118,9 @@ module.exports = {
           unique_email_id: '882e9bec19',
           email_type: 'html',
           status: 'subscribed',
-          merge_fields: '[Object]',
-          interests: '[Object]',
-          stats: '[Object]',
+          merge_fields: {},
+          interests: {},
+          stats: {},
           ip_signup: '198.2.191.34',
           timestamp_signup: '2015-09-15 17:24:43',
           ip_opt: '66.249.85.180',
@@ -130,62 +130,61 @@ module.exports = {
           language: 'en',
           vip: false,
           email_client: '',
-          location: '[Object]',
-          last_note: '[Object]',
+          location: {},
+          last_note: {},
           list_id: '57afe96172',
           _links: [{
-              "rel": "self",
-              "href": "https://usX.api.mailchimp.com/3.0/lists/57afe96172/members/f777bbffab8d1ceca8b757df63c47cb8",
-              "method": "GET",
-              "targetSchema": "https://api.mailchimp.com/schema/3.0/Lists/Members/Instance.json"
+              'rel': 'self',
+              'href': 'https://usX.api.mailchimp.com/3.0/lists/57afe96172/members/f777bbffab8d1ceca8b757df63c47cb8',
+              'method': 'GET',
+              'targetSchema': 'https://api.mailchimp.com/schema/3.0/Lists/Members/Instance.json'
             },
             {
-              "rel": "parent",
-              "href": "https://usX.api.mailchimp.com/3.0/lists/57afe96172/members",
-              "method": "GET",
-              "targetSchema": "https://api.mailchimp.com/schema/3.0/Lists/Members/Collection.json",
-              "schema": "https://api.mailchimp.com/schema/3.0/CollectionLinks/Lists/Members.json"
+              'rel': 'parent',
+              'href': 'https://usX.api.mailchimp.com/3.0/lists/57afe96172/members',
+              'method': 'GET',
+              'targetSchema': 'https://api.mailchimp.com/schema/3.0/Lists/Members/Collection.json',
+              'schema': 'https://api.mailchimp.com/schema/3.0/CollectionLinks/Lists/Members.json'
             },
             {
-              "rel": "update",
-              "href": "https://usX.api.mailchimp.com/3.0/lists/57afe96172/members/f777bbffab8d1ceca8b757df63c47cb8",
-              "method": "PATCH",
-              "schema": "https://api.mailchimp.com/schema/3.0/Lists/Members/Instance.json"
+              'rel': 'update',
+              'href': 'https://usX.api.mailchimp.com/3.0/lists/57afe96172/members/f777bbffab8d1ceca8b757df63c47cb8',
+              'method': 'PATCH',
+              'schema': 'https://api.mailchimp.com/schema/3.0/Lists/Members/Instance.json'
             },
             {
-              "rel": "upsert",
-              "href": "https://usX.api.mailchimp.com/3.0/lists/57afe96172/members/f777bbffab8d1ceca8b757df63c47cb8",
-              "method": "PUT",
-              "schema": "https://api.mailchimp.com/schema/3.0/Lists/Members/Instance.json"
+              'rel': 'upsert',
+              'href': 'https://usX.api.mailchimp.com/3.0/lists/57afe96172/members/f777bbffab8d1ceca8b757df63c47cb8',
+              'method': 'PUT',
+              'schema': 'https://api.mailchimp.com/schema/3.0/Lists/Members/Instance.json'
             },
             {
-              "rel": "delete",
-              "href": "https://usX.api.mailchimp.com/3.0/lists/57afe96172/members/f777bbffab8d1ceca8b757df63c47cb8",
-              "method": "DELETE"
+              'rel': 'delete',
+              'href': 'https://usX.api.mailchimp.com/3.0/lists/57afe96172/members/f777bbffab8d1ceca8b757df63c47cb8',
+              'method': 'DELETE'
             },
             {
-              "rel": "activity",
-              "href": "https://usX.api.mailchimp.com/3.0/lists/57afe96172/members/f777bbffab8d1ceca8b757df63c47cb8/activity",
-              "method": "GET",
-              "targetSchema": "https://api.mailchimp.com/schema/3.0/Lists/Members/Activity/Collection.json"
+              'rel': 'activity',
+              'href': 'https://usX.api.mailchimp.com/3.0/lists/57afe96172/members/f777bbffab8d1ceca8b757df63c47cb8/activity',
+              'method': 'GET',
+              'targetSchema': 'https://api.mailchimp.com/schema/3.0/Lists/Members/Activity/Collection.json'
             },
             {
-              "rel": "goals",
-              "href": "https://usX.api.mailchimp.com/3.0/lists/57afe96172/members/f777bbffab8d1ceca8b757df63c47cb8/goals",
-              "method": "GET",
-              "targetSchema": "https://api.mailchimp.com/schema/3.0/Lists/Members/Goals/Collection.json"
+              'rel': 'goals',
+              'href': 'https://usX.api.mailchimp.com/3.0/lists/57afe96172/members/f777bbffab8d1ceca8b757df63c47cb8/goals',
+              'method': 'GET',
+              'targetSchema': 'https://api.mailchimp.com/schema/3.0/Lists/Members/Goals/Collection.json'
             },
             {
-              "rel": "notes",
-              "href": "https://usX.api.mailchimp.com/3.0/lists/57afe96172/members/f777bbffab8d1ceca8b757df63c47cb8/notes",
-              "method": "GET",
-              "targetSchema": "https://api.mailchimp.com/schema/3.0/Lists/Members/Notes/Collection.json"
+              'rel': 'notes',
+              'href': 'https://usX.api.mailchimp.com/3.0/lists/57afe96172/members/f777bbffab8d1ceca8b757df63c47cb8/notes',
+              'method': 'GET',
+              'targetSchema': 'https://api.mailchimp.com/schema/3.0/Lists/Members/Notes/Collection.json'
             }
           ]
         }],
 
         list_id: '57afe96172',
-        total_items: 1,
 
         _links: [{
             'rel': 'self',
@@ -207,6 +206,7 @@ module.exports = {
             'schema': 'https://api.mailchimp.com/schema/3.0/Lists/Members/Instance.json'
           }
         ],
+        total_items: 1
 
       }
     }
