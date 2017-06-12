@@ -16,12 +16,12 @@ module.exports = {
       required: true
     },
     fields: {
-      example: '["one", "two"]',
+      example: 'templates.id, templates.name, templates.type',
       description: 'A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.',
       required: false
     },
     excludeFields: {
-      example: '["one", "two"]',
+      example: 'templates.id, templates._links',
       description: 'A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.',
       required: false
     },
@@ -66,13 +66,13 @@ module.exports = {
   exits: {
     error: {
       description: 'Returns the error response.',
-      example: { 
+      example: {
         type: 'http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/',
         title: 'Resource Not Found',
         status: 404,
         detail: 'The requested resource could not be found.',
-        instance: '' 
-      }      
+        instance: ''
+      }
     },
     success: {
       description: 'Returns the information about all templates.',
@@ -166,8 +166,6 @@ module.exports = {
 
       return exits.success(body)
     })
-  },
-
-
+  }
 
 };
