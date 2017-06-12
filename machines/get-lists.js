@@ -243,6 +243,7 @@ module.exports = {
         user: 'username',
         password: inputs.apiKey
       },
+      json: true,
       form: {
         fields: inputs.fields,
         exclude_fields: inputs.excludeFields,
@@ -264,13 +265,7 @@ module.exports = {
         return exits.error(response.statusCode)
       }
 
-      var parsedBody = JSON.parse(body)
-
-      return exits.success({
-        lists: parsedBody.lists,
-        totalItems: parsedBody.total_items,
-        _links: parsedBody['_links']
-      })
+      return exits.success(body)
     })
   }
 }
