@@ -262,7 +262,8 @@ module.exports = {
         return exits.error(err)
       }
       if (response.statusCode > 299 || response.statusCode < 200) {
-        return exits.error(response.statusCode)
+        var error = body.status ? body : {status: response.statusCode}
+        return exits.error(error)
       }
 
       return exits.success(body)
